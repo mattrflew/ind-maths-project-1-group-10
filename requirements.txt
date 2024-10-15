@@ -1,0 +1,6 @@
+# Specify the Python version
+# python_version == "3.12"
+
+# Required libraries
+numpy
+matplotlib
