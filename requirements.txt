@@ -4,3 +4,4 @@
 # Required libraries
 numpy
 matplotlib
+plotly
