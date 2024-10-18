@@ -1,0 +1,7 @@
+To do
+
+1. Make some optimization code to get the desired initial condition
+2. Compare with analytical solution
+3. Write a function to take in a time-dependent blood flow, v
+4. Write Forward Euler with matrices
+5. Use backwards euler instead
