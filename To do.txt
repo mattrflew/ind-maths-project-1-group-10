@@ -1,7 +1,6 @@
 To do
 
-1. Use backwards euler instead
-2. Write forwards and backwards eulers as functions
-3. Compare with analytical solution
-4. Write a function to take in a time-dependent blood flow, v
-5. Make some optimization code to get the desired initial condition
+1. Compare with analytical solution
+2. How much large do L1 and L2 need to be to exist as infinity boundary conditions but not affect the solution?
+3. Write a function to take in a time-dependent blood flow, v
+4. Make some optimization code to get the desired initial condition
