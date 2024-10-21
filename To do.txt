@@ -1,6 +1,4 @@
 To do
 
-1. Compare with analytical solution
-2. How much large do L1 and L2 need to be to exist as infinity boundary conditions but not affect the solution?
-3. Write a function to take in a time-dependent blood flow, v
-4. Make some optimization code to get the desired initial condition
+1. How much large do L1 and L2 need to be to exist as infinity boundary conditions but not affect the solution?
+2. Make some optimization code to get the desired initial condition
