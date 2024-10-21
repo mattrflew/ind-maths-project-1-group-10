@@ -73,7 +73,7 @@ def forward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=0
         U[:,n] = u_new
     
     # Find the final concentration at the heart
-    index_closest = (np.abs(x - 13)).argmin()
+    index_closest = (np.abs(x - x_heart)).argmin()
     Cf = U[index_closest, -1]
     
     return U, x, Cf
@@ -157,7 +157,7 @@ def backward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=
         U[:,n] = u_new    
     
     # Find the final concentration at the heart
-    index_closest = (np.abs(x - 13)).argmin()
+    index_closest = (np.abs(x - x_heart)).argmin()
     Cf = U[index_closest, -1]
     
     return U, x, Cf
