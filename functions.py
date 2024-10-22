@@ -26,7 +26,7 @@ def forward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=0
     C = D*dt/(dx**2)
     A = v*dt/(2*dx)
 
-    print(f"Delta x = {round(dx, 4)}\nDelta t = {round(dt, 4)}\nC = {round(C, 4)}\nA = {round(A, 4)}")
+    # print(f"Delta x = {round(dx, 4)}\nDelta t = {round(dt, 4)}\nC = {round(C, 4)}\nA = {round(A, 4)}")
 
     if C >= 0.5:
         warnings.warn(f'C is greater than 0.5, C = {round(C,4)}')
@@ -94,7 +94,7 @@ def backward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=
     C = D*dt/(dx**2)
     A = v*dt/(2*dx)
 
-    print(f"Delta x = {round(dx, 4)}\nDelta t = {round(dt, 4)}\nC = {round(C, 4)}\nA = {round(A, 4)}")
+    # print(f"Delta x = {round(dx, 4)}\nDelta t = {round(dt, 4)}\nC = {round(C, 4)}\nA = {round(A, 4)}")
 
     if C >= 0.5:
         warnings.warn(f'C is greater than 0.5, C = {round(C,4)}')
