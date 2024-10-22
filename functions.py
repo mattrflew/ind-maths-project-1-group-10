@@ -76,7 +76,7 @@ def forward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=0
     index_closest = (np.abs(x - x_heart)).argmin()
     Cf = U[index_closest, -1]
     
-    return Cf, U, x
+    return Cf, U, x, t
 
 def backward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=0, x_heart=13):
 # Time parameters
@@ -160,7 +160,7 @@ def backward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=
     index_closest = (np.abs(x - x_heart)).argmin()
     Cf = U[index_closest, -1]
     
-    return Cf, U, x
+    return Cf, U, x, t
 
 
 # # Plotting
