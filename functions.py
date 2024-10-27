@@ -164,7 +164,7 @@ def backward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=
 
 
 # # Plotting
-def concentration_x_plot(x, U, t_str, ax):
+def concentration_x_plot(x, U, C0, t_str, ax):
     # Create a figure outside of the call to function
     
     heart_loc = 13
@@ -177,15 +177,18 @@ def concentration_x_plot(x, U, t_str, ax):
     
     ax.plot(x, U, '.')
     
-    ax.set_xlabel('x')
-    ax.set_ylabel('concentration')
-    ax.set_title(t_str)
+    ax.set_xlabel('x [m]')
+    ax.set_ylabel('Concentration [g/m]')
+    
+    title_str = f'{t_str}, $C_0$ = {C0} g/m'
+    ax.set_title(title_str)
 
     ax.set_xlim([0,15])
     
     ax.axvline(x=heart_loc, color='r', linestyle='--')
     
     ax.axhline(y=C_heart, color='b', linestyle='--', label= f'Cf = {round(C_heart, 4)}')
+    
     ax.text(x=12, y=C_heart, s=f'Cf = {round(C_heart, 4)}', color='b', va='bottom', ha='left')
     # ax.legend()
     

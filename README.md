@@ -31,6 +31,14 @@ Using virtual environments - may not be necessary for our purposes. Just be sure
 
 5. Select the _venv_ kernel within _.ipynb_ files
 
+## main.ipynb
+
+Notebook containing the final analysis methods and figure export.
+
+## exploratory directory
+
+Collection of notebooks to experiment with analysis methods and investigations for expanding on the problem.
+
 ## Group 10
 
 - Yue Cao
