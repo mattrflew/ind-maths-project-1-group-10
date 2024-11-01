@@ -10,7 +10,7 @@ def I(x, C0): # initial u(x,0)
     u[(x >= 0) & (x <= 1)] = C0
     return u
 
-def forward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=0, x_heart=13):
+def forward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=0, x_heart=12.5):
     # Time parameters
     Nt_points = Nt_gaps + 1
     t = np.linspace(0.,T,Nt_points)  # times at each time step
@@ -76,9 +76,9 @@ def forward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=0
     index_closest = (np.abs(x - x_heart)).argmin()
     Cf = U[index_closest, -1]
     
-    return Cf, U, x, t
+    return Cf, U, x, t, C, A
 
-def backward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=0, x_heart=13):
+def backward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=0, x_heart=12.5):
 # Time parameters
     Nt_points = Nt_gaps + 1
     t = np.linspace(0.,T,Nt_points)  # times at each time step
@@ -96,11 +96,11 @@ def backward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=
 
     # print(f"Delta x = {round(dx, 4)}\nDelta t = {round(dt, 4)}\nC = {round(C, 4)}\nA = {round(A, 4)}")
 
-    if C >= 0.5:
-        warnings.warn(f'C is greater than 0.5, C = {round(C,4)}')
+    # if C >= 0.5:
+    #     warnings.warn(f'C is greater than 0.5, C = {round(C,4)}')
 
-    if A > 1:
-        warnings.warn(f'A is greater than 1, A = {round(A,4)}')
+    # if A > 1:
+    #     warnings.warn(f'A is greater than 1, A = {round(A,4)}')
 
     # Boundary conditions
     # dirichlet
@@ -164,10 +164,10 @@ def backward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=
 
 
 # # Plotting
-def concentration_x_plot(x, U, C0, t_str, ax):
+def concentration_x_plot(x, U, C0, heart_loc, t_str, ax):
     # Create a figure outside of the call to function
     
-    heart_loc = 13
+    # heart_loc = 12.5
     index_closest = (np.abs(x - heart_loc)).argmin()
     C_heart = U[index_closest]
     # print(index_closest)
@@ -180,8 +180,8 @@ def concentration_x_plot(x, U, C0, t_str, ax):
     ax.set_xlabel('x [m]')
     ax.set_ylabel('Concentration [g/m]')
     
-    title_str = f'{t_str}, $C_0$ = {C0} g/m'
-    ax.set_title(title_str)
+    # title_str = f'{t_str}, $C_0$ = {C0} g/m'
+    # ax.set_title(title_str)
 
     ax.set_xlim([0,15])
     
@@ -189,6 +189,6 @@ def concentration_x_plot(x, U, C0, t_str, ax):
     
     ax.axhline(y=C_heart, color='b', linestyle='--', label= f'Cf = {round(C_heart, 4)}')
     
-    ax.text(x=12, y=C_heart, s=f'Cf = {round(C_heart, 4)}', color='b', va='bottom', ha='left')
+    ax.text(x=heart_loc+0.15, y=C_heart, s=f'Cf = {round(C_heart, 4)}', color='b', va='bottom', ha='left')
     # ax.legend()
     
