@@ -7,7 +7,7 @@ def I(x, C0): # initial u(x,0)
     u = np.zeros_like(x)
     
     # where x is between 0 and 1, set to C0
-    u[(x >= 0) & (x <= 1)] = C0
+    u[(x >= -0.5) & (x <= 0.5)] = C0
     return u
 
 def forward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=0, x_heart=12.5):
@@ -164,7 +164,7 @@ def backward_euler(Nt_gaps, Nx_spaces, L1, L2, C0, T=60, D=0.1, v=0.2, b0=0, bL=
 
 
 # # Plotting
-def concentration_x_plot(x, U, C0, heart_loc, t_str, ax, xlim_right=15, ylims = None):
+def concentration_x_plot(x, U, C0, heart_loc, t_str, ax, xlims=[-1,15], ylims = None):
     # Create a figure outside of the call to function
     
     # heart_loc = 12.5
@@ -183,7 +183,7 @@ def concentration_x_plot(x, U, C0, heart_loc, t_str, ax, xlim_right=15, ylims = 
     # title_str = f'{t_str}, $C_0$ = {C0} g/m'
     # ax.set_title(title_str)
 
-    ax.set_xlim([0,xlim_right])
+    ax.set_xlim(xlims)
     
     if ylims:
         ax.set_ylim(list(ylims))
