@@ -1,4 +1,0 @@
-To do
-
-1. How much large do L1 and L2 need to be to exist as infinity boundary conditions but not affect the solution?
-2. 3D plots

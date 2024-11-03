@@ -31,11 +31,17 @@ Using virtual environments - may not be necessary for our purposes. Just be sure
 
 5. Select the _venv_ kernel within _.ipynb_ files
 
-## main.ipynb
+## Explanation of repository
 
-Notebook containing the final analysis methods and figure export.
+### verify_analytical_solution.ipynb
 
-## exploratory directory
+Notebook to plot analytical results and determine numerical solution model parameters
+
+### real_world_model.ipynb
+
+Notebook expanding on problem with non-constant blood flow and figure export.
+
+### exploratory directory
 
 Collection of notebooks to experiment with analysis methods and investigations for expanding on the problem.
 
